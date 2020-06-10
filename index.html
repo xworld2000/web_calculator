@@ -1,63 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Worlds Best Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Xworld2000 Elementary Calculator</title>
 
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
     <style>
+        .container {
+            background-image: url("calc.png");
+            background-attachment: scroll;
+            font-family: 'Barrio';
+            font-size: 22px;
+        }
 
+        .jumbotron {
+            background: linear-gradient(rgb(47, 172, 194), rgb(173, 168, 168));
+
+        }
     </style>
 
     <script>
         var calculator = {
             addNumbers: function () {
                 // hint: these are strings
-                var numberOne = document.forms.inputs.numberOne.value;
-                var numberTwo = document.forms.inputs.numberTwo.value;
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne + numberTwo;
             },
             subtractNumbers: function () {
-                
-            }
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne - numberTwo;
+            },
+            multiplyNumbers: function () {
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne * numberTwo;
+            },
+
+
         }
 
     </script>
 
+
 </head>
 
 <body>
-    <div>Header</div>
-    <div>
-       <!--
-         - allow two numbers to be entered
-         - show buttons for add and subtract
-         - show the result
-        -->
-        <form name="inputs">
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Xworld Elementary Calculator</h1>
+        </div>
+
+        <div class="jumbotron">
+
             <div>
-                Number 1:
-                <input type="number" name="numberOne" class="form-control" placeholder="First number" aria-label="Number1" >
-            </div>
-            <div>
-                Number 2:
-                <input type="number" class="form-control" name="numberTwo">
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()" >Add</button>
-                <button type="button" class="btn btn-primary">Substract</button>
-            </div>
-            <div>
-                <input name="result" value="0" class="form-control" disabled />
-            </div>
-        </form>
+                <!--
+             - allow two numbers to be entered
+             - show buttons for add and subtract
+             - show the result
+            -->
+                <form name="inputs">
+                    <div>
+                        Number 1:
+                        <input type="number" name="numberOne" class="form-control" placeholder="First number"
+                            aria-label="Number1">
+                    </div>
+                    <div>
+                        Number 2:
+                        <input type="number" class="form-control" name="numberTwo" placeholder="Second number">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-danger" onclick="calculator.addNumbers()">Add</button>
+                        <button type="button" class="btn btn-info"
+                            onclick="calculator.subtractNumbers()">Subtract</button>
+                        <button type="button" class="btn btn-primary"
+                            onclick="calculator.multiplyNumbers()">Multiply</button>
+                    </div>
+                    <div>
+                        <input name="result" value="0" class="form-control" disabled="">
+                    </div>
+                </form>
 
 
+            </div>
+            <div>©Xworld Systems. By using this site, you accept the Xworld Terms of Use and Privacy Policy.</div>
+        </div>
     </div>
-    <div>Footer</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+    <!-- Use downloaded version of Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
