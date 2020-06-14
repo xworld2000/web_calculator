@@ -42,6 +42,11 @@
                 var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
                 document.forms.inputs.result.value = numberOne * numberTwo;
             },
+            divideNumbers: function () {
+                var numberOne = parseFloat(document.forms.inputs.numberOne.value);
+                var numberTwo = parseFloat(document.forms.inputs.numberTwo.value);
+                document.forms.inputs.result.value = numberOne / numberTwo;
+            },
 
 
         }
@@ -83,6 +88,8 @@
                             onclick="calculator.subtractNumbers()">Subtract</button>
                         <button type="button" class="btn btn-primary"
                             onclick="calculator.multiplyNumbers()">Multiply</button>
+                        <button type="button" class="btn btn-warning"
+                            onclick="calculator.divideNumbers()">Divide</button>
                     </div>
                     <div>
                         <input name="result" value="0" class="form-control" disabled="">
